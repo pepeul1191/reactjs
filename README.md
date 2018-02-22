@@ -8,6 +8,10 @@ Transformar JSX a JS:
 
     $ gulp babel
 
+Todas las tareas Gulp:
+
+    $ gulp todo && gulp app
+
 Extensión de navegador a instalar (Firefox o Chrome):
 
     React Developer Tools

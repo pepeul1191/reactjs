@@ -10,6 +10,8 @@ var DESTINO = 'dist/';
 var MEDIA = '';
 var BASE_URL = 'http://localhost:82/react/';
 
+// INICIO LIBRERÍAS JS ----------------------------------------------------------
+
 gulp.task('libs-js', function(){
   gulp.src([
     MEDIA + 'bower_components/jquery/dist/jquery.min.js',
@@ -50,6 +52,21 @@ gulp.task('libs-css', function() {
   .pipe(gulp.dest(DESTINO));
 });
 
+// SASS ----------------------------------------------------------
+
+gulp.task('sass', function () {
+  gulp.src([
+  		'scss/constants.scss',
+  		'scss/styles.scss',
+  ])
+  .pipe(concat('styles.scss'))
+  .pipe(sass.sync().on('error', sass.logError))
+  .pipe(minifyCss())
+  .pipe(gulp.dest(DESTINO));
+});
+
+// REACTJS ----------------------------------------------------------
+
 gulp.task('babel', function(){
   gulp.src([
   	MEDIA + 'jsx/app.jsx'
@@ -59,6 +76,8 @@ gulp.task('babel', function(){
    }))
   .pipe(gulp.dest(DESTINO));
 });
+
+// APP ----------------------------------------------------------
 
 gulp.task('app', function(){
   gulp.src([
@@ -75,17 +94,15 @@ gulp.task('app', function(){
     ignoreFiles: []
   }))
   .pipe(gulp.dest(DESTINO));
+
+  gulp.src([
+  	DESTINO + 'libs.min.css',
+  	DESTINO + 'styles.css',
+  ])
+  .pipe(concat('styles.min.css'))
+  .pipe(gulp.dest(DESTINO));
 });
 
-gulp.task('sass', function () {
-  return gulp.src([
-  		'scss/constants.scss',
-  		'scss/styles.scss',
-  	])
-  	.pipe(concat('styles.min.scss'))
-    .pipe(sass.sync().on('error', sass.logError))
-  	.pipe(minifyCss())
-    .pipe(gulp.dest('dist'));
-});
+// TODO ----------------------------------------------------------
 
-gulp.task('layout', ['libs-js', 'babel', 'app', 'fonts', 'libs-css', 'sass',]);
+gulp.task('todo', ['fonts', 'libs-css', 'sass', 'libs-js', 'babel', 'app']);
