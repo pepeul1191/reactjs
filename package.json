@@ -1,0 +1,23 @@
+{
+    "name": "react-pp",
+    "preferGlobal": true,
+    "version": "0.0.1",
+    "author": "Pepe Valdivia <jvaldivia@softweb.pe>",
+    "description": "Aprendiendo a usar GULP",
+    "license": "MIT",
+    "engines": {
+        "node": ">=0.10"
+    },
+    "dependencies": {
+        "babel-core": "^6.26.0",
+        "babel-plugin-transform-react-jsx": "^6.24.1",
+        "express": "~3.4.7",
+        "gulp-babel": "^7.0.1",
+        "gulp-livereload": "^3.8.1",
+        "handlebars": "^4.0.10",
+        "json-lint": "~0.1.0"
+    },
+    "devDependencies": {
+        "gulp": "^3.9.1"
+    }
+}

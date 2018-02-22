@@ -1,8 +1,12 @@
 ## ReactJS
 
-Descargar depedencias con bower:
+Descargar depedencias de bower y npm:
     
-    $ bower install
+    $ bower install && npm install
+
+Transformar JSX a JS:
+
+    $ gulp babel
 
 ---
 
