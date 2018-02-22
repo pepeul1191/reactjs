@@ -14,8 +14,12 @@
         "express": "~3.4.7",
         "gulp-babel": "^7.0.1",
         "gulp-livereload": "^3.8.1",
+        "gulp-sass": "^3.1.0",
         "handlebars": "^4.0.10",
-        "json-lint": "~0.1.0"
+        "json-lint": "~0.1.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-concat-css": "^2.3.0",
+        "gulp-minify-css": "^1.2.4"
     },
     "devDependencies": {
         "gulp": "^3.9.1"

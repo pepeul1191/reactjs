@@ -1,6 +1,6 @@
 const el = (
 	<h1 id="title">
-		Hola <span className="rojo">mundo</span> {2 + 5}
+		Hola <span className="texto-error">mundo</span> {2 + 5}
 	</h1>
 )
 ReactDOM.render(el, document.getElementById('app2'));
