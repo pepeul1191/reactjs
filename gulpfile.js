@@ -15,6 +15,7 @@ var BASE_URL = 'http://localhost:82/react/';
 gulp.task('libs-js', function(){
   gulp.src([
     MEDIA + 'bower_components/jquery/dist/jquery.min.js',
+    MEDIA + 'bower_components/tether/dist/js/tether.min.js',
     MEDIA + 'bower_components/bootstrap/dist/js/bootstrap.min.js',
     MEDIA + 'bower_components/react/react.development.js',
 		MEDIA + 'bower_components/react/react-dom.development.js'
@@ -42,6 +43,7 @@ gulp.task('fonts', function() {
 
 gulp.task('libs-css', function() {
   gulp.src([
+    MEDIA + 'bower_components/tether/dist/css/tether.min.css',
     MEDIA + 'bower_components/bootstrap/dist/css/bootstrap.min.css',
     MEDIA + 'bower_components/font-awesome/css/font-awesome.min.css',
   ])
