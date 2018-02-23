@@ -18,6 +18,10 @@ Extensión de navegador a instalar (Firefox o Chrome):
 
 Tema: bootstrapious
 
+Tareas Gulp para 'login.html':
+
+    $ gulp 
+
 ---
 
 Fuentes:

@@ -105,6 +105,46 @@ gulp.task('app', function(){
   .pipe(gulp.dest(DESTINO));
 });
 
+// Login ----------------------------------------------------------
+
+gulp.task('login-css', function(){
+  gulp.src([
+    MEDIA + 'scss/constants.scss',
+    MEDIA + 'scss/styles.scss',
+    MEDIA + 'scss/login.scss',
+  ])
+  .pipe(concat('login.scss'))
+  .pipe(sass.sync().on('error', sass.logError))
+  .pipe(minifyCss())
+  .pipe(gulp.dest(DESTINO));
+
+  gulp.src([
+    DESTINO + 'libs.min.css',
+    DESTINO + 'login.css',
+  ])
+  .pipe(concat('login.min.css'))
+  .pipe(gulp.dest(DESTINO));
+});
+
+gulp.task('login-js', function(){
+  gulp.src([
+    DESTINO + 'libs-min.js',
+    MEDIA + 'js/front.js',
+  ])
+  .pipe(concat('login-min.js'))
+  /*.pipe(minify({
+    ext:{ 
+      //src:'libs.js',
+      //min:'min.js'
+    },
+    exclude: [],
+    ignoreFiles: []
+  }))*/
+  .pipe(gulp.dest(DESTINO));
+});
+
+gulp.task('login', ['sass', 'login-css', 'login-js']);
+
 // TODO ----------------------------------------------------------
 
 gulp.task('todo', ['fonts', 'libs-css', 'sass', 'libs-js', 'babel', 'app']);
