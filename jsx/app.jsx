@@ -24,7 +24,4 @@ function reloj(){
 
 setInterval(reloj, 1000)
 
-ReactDOM.render(
-  <HelloMessage name="Taylor" />,
-  document.getElementById('hello')
-);
+ReactDOM.render(<HelloMessage name="Taylor" />, document.getElementById('hello'));
