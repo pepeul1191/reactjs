@@ -22,3 +22,4 @@ Fuentes:
 
 + https://www.youtube.com/watch?v=4gAAiOKOwio
 + https://stackoverflow.com/questions/33243895/how-convert-jsx-to-js-with-gulp-and-babel
++ https://www.emenia.es/variables-en-sass/

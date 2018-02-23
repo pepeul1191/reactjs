@@ -85,14 +85,14 @@ gulp.task('app', function(){
     DESTINO + 'app.js',
   ])
   .pipe(concat('app.js'))
-  .pipe(minify({
+  /*.pipe(minify({
     ext:{ 
       //src:'libs.js',
       //min:'min.js'
     },
     exclude: [],
     ignoreFiles: []
-  }))
+  }))*/
   .pipe(gulp.dest(DESTINO));
 
   gulp.src([
