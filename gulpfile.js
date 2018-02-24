@@ -143,7 +143,46 @@ gulp.task('login-js', function(){
   .pipe(gulp.dest(DESTINO));
 });
 
-gulp.task('login', ['sass', 'login-css', 'login-js']);
+gulp.task('login', ['login-css', 'login-js']);
+
+// Home ----------------------------------------------------------
+
+gulp.task('home-css', function(){
+  gulp.src([
+    MEDIA + 'scss/constants.scss',
+    MEDIA + 'scss/styles.scss',
+  ])
+  .pipe(concat('home.scss'))
+  .pipe(sass.sync().on('error', sass.logError))
+  .pipe(minifyCss())
+  .pipe(gulp.dest(DESTINO));
+
+  gulp.src([
+    DESTINO + 'libs.min.css',
+    DESTINO + 'home.css',
+  ])
+  .pipe(concat('home.min.css'))
+  .pipe(gulp.dest(DESTINO));
+});
+
+gulp.task('home-js', function(){
+  gulp.src([
+    DESTINO + 'libs-min.js',
+    MEDIA + 'js/front.js',
+  ])
+  .pipe(concat('home-min.js'))
+  /*.pipe(minify({
+    ext:{ 
+      //src:'libs.js',
+      //min:'min.js'
+    },
+    exclude: [],
+    ignoreFiles: []
+  }))*/
+  .pipe(gulp.dest(DESTINO));
+});
+
+gulp.task('home', ['home-css', 'home-js']);
 
 // TODO ----------------------------------------------------------
 
