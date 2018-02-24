@@ -23,6 +23,8 @@
     "react": "^16.1.0",
     "bootstrap": "v4.0.0-alpha.6",
     "jquery": "3.2.1",
-    "tether": "^1.4.3"
+    "tether": "^1.4.3",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
+    "popper.js": "^1.12.9"
   }
 }
