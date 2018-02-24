@@ -21,7 +21,6 @@ gulp.task('libs-js', function(){
     MEDIA + 'bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js',
     MEDIA + 'bower_components/react/react.development.js',
 		MEDIA + 'bower_components/react/react-dom.development.js',
-    MEDIA + 'js/front.js',
   ])
   .pipe(concat('libs.js'))
   .pipe(minify({
@@ -48,7 +47,7 @@ gulp.task('libs-css', function() {
     MEDIA + 'bower_components/tether/dist/css/tether.min.css',
     MEDIA + 'bower_components/bootstrap/dist/css/bootstrap.min.css',
     MEDIA + 'bower_components/font-awesome/css/font-awesome.min.css',
-    MEDIA + 'bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
+    MEDIA + 'bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css',
   ])
   .pipe(concatCss('libs.min.css'))
   .pipe(minifyCss())
@@ -171,6 +170,7 @@ gulp.task('home-css', function(){
 gulp.task('home-js', function(){
   gulp.src([
     DESTINO + 'libs-min.js',
+    MEDIA + 'js/front.js',
     MEDIA + 'js/home.js',
   ])
   .pipe(concat('home-min.js'))
