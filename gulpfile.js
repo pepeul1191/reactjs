@@ -114,6 +114,7 @@ gulp.task('login-css', function(){
     MEDIA + 'scss/constants.scss',
     MEDIA + 'scss/styles.scss',
     MEDIA + 'scss/login.scss',
+    MEDIA + 'scss/custom.scss',
   ])
   .pipe(concat('login.scss'))
   .pipe(sass.sync().on('error', sass.logError))
@@ -128,10 +129,21 @@ gulp.task('login-css', function(){
   .pipe(gulp.dest(DESTINO));
 });
 
+gulp.task('login-jsx', function(){
+  gulp.src([
+    MEDIA + 'jsx/forms/form_login.jsx'
+  ])
+  .pipe(babel({
+    plugins: ['transform-react-jsx']
+   }))
+  .pipe(gulp.dest(DESTINO));
+});
+
 gulp.task('login-js', function(){
   gulp.src([
     DESTINO + 'libs-min.js',
     MEDIA + 'js/front.js',
+    DESTINO + 'form_login.js',
   ])
   .pipe(concat('login-min.js'))
   /*.pipe(minify({
@@ -145,7 +157,7 @@ gulp.task('login-js', function(){
   .pipe(gulp.dest(DESTINO));
 });
 
-gulp.task('login', ['login-css', 'login-js']);
+gulp.task('login', ['login-css', 'login-jsx','login-js']);
 
 // Home ----------------------------------------------------------
 
@@ -153,6 +165,7 @@ gulp.task('home-css', function(){
   gulp.src([
     MEDIA + 'scss/constants.scss',
     MEDIA + 'scss/styles.scss',
+    MEDIA + 'scss/custom.scss',
   ])
   .pipe(concat('home.scss'))
   .pipe(sass.sync().on('error', sass.logError))
