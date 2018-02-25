@@ -182,7 +182,8 @@ gulp.task('home-css', function(){
 
 gulp.task('home-jsx', function(){
   gulp.src([
-    MEDIA + 'jsx/navs/nav_user.jsx'
+    MEDIA + 'jsx/navs/nav_user.jsx',
+    MEDIA + 'jsx/navs/nav_subtitles.jsx'
   ])
   .pipe(babel({
     plugins: ['transform-react-jsx']
@@ -195,6 +196,7 @@ gulp.task('home-js', function(){
     DESTINO + 'libs-min.js',
     MEDIA + 'js/front.js',
     DESTINO + 'nav_user.js',
+    DESTINO + 'nav_subtitles.js',
     MEDIA + 'js/home.js',
   ])
   .pipe(concat('home-min.js'))

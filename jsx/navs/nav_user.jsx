@@ -3,8 +3,6 @@
 class NavUser extends React.Component {
   render() {
     if(typeof this.props.user !== 'undefined' && this.props.user != ''){
-      console.log(BASE_URL + this.props.user.img);
-      console.log(this.props.user.user_name);
       return (
         <div>
           <img src={BASE_URL + this.props.user.img} alt={this.props.user.user_name} className="img-fluid rounded-circle" />
