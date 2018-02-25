@@ -1,4 +1,6 @@
-class FormLogin extends React.Component {
+// MENSAJE is value setted by the server when rendering de page but before loading this script
+
+class LabelLogin extends React.Component {
   render() {
   	if(this.props.mensaje == 'false'){
   		return('');
@@ -11,5 +13,5 @@ class FormLogin extends React.Component {
 }
 
 ReactDOM.render(
-	<FormLogin mensaje={MENSAJE}/>,document.getElementById('mensaje')
+	<LabelLogin mensaje={MENSAJE}/>,document.getElementById('mensaje')
 );

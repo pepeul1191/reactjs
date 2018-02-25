@@ -131,7 +131,7 @@ gulp.task('login-css', function(){
 
 gulp.task('login-jsx', function(){
   gulp.src([
-    MEDIA + 'jsx/forms/form_login.jsx'
+    MEDIA + 'jsx/labels/label_login.jsx'
   ])
   .pipe(babel({
     plugins: ['transform-react-jsx']
@@ -143,7 +143,7 @@ gulp.task('login-js', function(){
   gulp.src([
     DESTINO + 'libs-min.js',
     MEDIA + 'js/front.js',
-    DESTINO + 'form_login.js',
+    DESTINO + 'label_login.js',
   ])
   .pipe(concat('login-min.js'))
   /*.pipe(minify({
