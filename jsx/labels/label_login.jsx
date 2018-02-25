@@ -1,4 +1,4 @@
-// MENSAJE is value setted by the server when rendering de page but before loading this script
+// import MENSAJE... this value is setted by the server when rendering de page but before loading this script
 
 class LabelLogin extends React.Component {
   render() {
