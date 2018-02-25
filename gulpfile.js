@@ -180,10 +180,21 @@ gulp.task('home-css', function(){
   .pipe(gulp.dest(DESTINO));
 });
 
+gulp.task('home-jsx', function(){
+  gulp.src([
+    MEDIA + 'jsx/navs/nav_user.jsx'
+  ])
+  .pipe(babel({
+    plugins: ['transform-react-jsx']
+   }))
+  .pipe(gulp.dest(DESTINO));
+});
+
 gulp.task('home-js', function(){
   gulp.src([
     DESTINO + 'libs-min.js',
     MEDIA + 'js/front.js',
+    DESTINO + 'nav_user.js',
     MEDIA + 'js/home.js',
   ])
   .pipe(concat('home-min.js'))
@@ -198,7 +209,7 @@ gulp.task('home-js', function(){
   .pipe(gulp.dest(DESTINO));
 });
 
-gulp.task('home', ['home-css', 'home-js']);
+gulp.task('home', ['home-css', 'home-jsx','home-js']);
 
 // TODO ----------------------------------------------------------
 

@@ -11,6 +11,15 @@
   <link rel="stylesheet" type="text/css" href="dist/home.min.css">
   -->
   <link rel="stylesheet" type="text/css" href="dist/home.min.css">
+  <script type="text/javascript">
+    const BASE_URL = 'http://localhost:82/react/';
+    const USER = {
+      img: 'img/yo.jpeg',
+      user_name: 'jvaldivia',
+      name: 'Pepe Valdivia', 
+      position: 'Analista Desarrollador'
+    };
+  </script>
 </head>
 <body>
   <!-- Side Navbar -->
@@ -19,8 +28,7 @@
       <!-- Sidebar Header    -->
       <div class="sidenav-header d-flex align-items-center justify-content-center">
         <!-- User Info-->
-        <div class="sidenav-header-inner text-center"><img src="img/avatar-1.jpg" alt="person" class="img-fluid rounded-circle">
-          <h2 class="h5">Anderson Hardy</h2><span>Web Developer</span>
+        <div class="sidenav-header-inner text-center" id="user-logged">
         </div>
         <!-- Small Brand information, appears on minimized sidebar-->
         <div class="sidenav-header-logo">
@@ -536,9 +544,6 @@ Example dropdown </a>
     </div>
   </footer>
 </div>
-  <script src="dist/home-min.js" type="text/javascript" ></script>
-  <!--
-  <script src="dist/libs-min.js" type="text/javascript" ></script>
-  -->
+<script src="dist/home-min.js" type="text/javascript" ></script>
 </body>
 </html>
